@@ -40,17 +40,17 @@ O objetivo é derrotar o oponente escolhendo um de três objetos, cada qual com 
       CONTINUAR
     FIM SE
     
-    escolia_computador = Escolha aleatória da lista
+    escolha_computador = Escolha aleatória da lista
     
     ESCREVA "Jogador escolheu: " + escolha_jogador
-    ESCREVA "Computador escolheu: " + escolia_computador
+    ESCREVA "Computador escolheu: " + escolha_computador
     
     SE escolha_jogador == escolha_computador ENTÃO
       ESCREVA "Empate!"
     SENÃO
-      SE (escolha_jogador == Pedra E escolia_computador == Tesoura) OU
-         (escolha_jogador == Papel E escolia_computador == Pedra) OU
-         (escolha_jogador == Tesoura E escolia_computador == Papel) ENTÃO
+      SE (escolha_jogador == Pedra E escolha_computador == Tesoura) OU
+         (escolha_jogador == Papel E escolha_computador == Pedra) OU
+         (escolha_jogador == Tesoura E escolha_computador == Papel) ENTÃO
         ESCREVA "Jogador venceu!"
       SENÃO
         ESCREVA "Computador venceu!"
