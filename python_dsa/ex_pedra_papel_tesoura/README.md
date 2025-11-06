@@ -1,62 +1,57 @@
-Pedra, Papel e Tesoura é um jogo de mão simples e popular, geralmente disputado entre duas pessoas. 
+# Pedra, Papel e Tesoura
+
+É um jogo de mão simples e popular, geralmente disputado entre duas pessoas. 
 O objetivo é derrotar o oponente escolhendo um de três objetos, cada qual com uma vantagem sobre um objeto e uma desvantagem sobre o outro.As regras de vitória são as seguintes:
 
--Pedra vence a Tesoura (quebrando-a).
--Tesoura vence o Papel (cortando-o).
--Papel vence a Pedra (cobrindo-a).
+- Pedra vence a Tesoura (quebrando-a).
+- Tesoura vence o Papel (cortando-o).
+- Papel vence a Pedra (cobrindo-a).
+- Se ambos os jogadores escolherem o mesmo objeto, a rodada resulta em um empate.
 
-Se ambos os jogadores escolherem o mesmo objeto, a rodada resulta em um empate.
-
-//Estrutura
+### Estrutura
 
 - Apresentação:
-Jogo Pedra, Papel e Tesoura
-Regras: Escolha entre 'pedra', 'papel' ou 'tesoura'
+  - Jogo Pedra, Papel e Tesoura
+  - Regras: Escolha entre 'pedra', 'papel' ou 'tesoura'
 
 - Coleta de dados:
-Leia jogada do jogador 1
-Leia jogada do Computador
+  - Leia jogada do jogador
+  - Leia jogada do Computador
 
-- Tratamento de dados:
-Converter jogada do jogador para letras sem espaços
-Converter jogada do computador para palavra sem espaços
+- Escolhas:
+  - Escrever 'Jogador escolheu: {Escolha}'
+  - Escrever 'Computador escolheu: {Escolha}'
 
-Escrever 'Jogador escolheu: {Escolha}'
-Escrever 'Computador escolheu: {Escolha}'
+### Lógica para determinar vencedor:
 
-Lógica para determinar vencedor:
-
-INICIAR
-  OPCOES = ["Pedra", "Papel", "Tesoura"]
+```python
+ INICIAR
   
   ENQUANTO verdadeiro FAÇA
-    ESCREVA "Escolha: 1-Pedra, 2-Papel, 3-Tesoura, 0-Sair"
+    ESCREVA "Escolha: Pedra, Papel, Tesoura, Sair"
     LEIA escolha_jogador
     
-    SE escolha_jogador == 0 ENTÃO
+    SE escolha_jogador == Sair ENTÃO
       PARAR
     FIM SE
     
-    SE escolha_jogador < 1 OU escolha_jogador > 3 ENTÃO
+    SE escolha_jogador não está na lista
       ESCREVA "Escolha inválida! Tente novamente."
       CONTINUAR
     FIM SE
     
-    escolia_computador = NUMERO_ALEATORIO(1, 3)
+    escolia_computador = Escolha aleatória da lista
     
-    ESCREVA "Jogador escolheu: " + OPCOES[escolha_jogador - 1]
-    ESCREVA "Computador escolheu: " + OPCOES[escolia_computador - 1]
+    ESCREVA "Jogador escolheu: " + escolha_jogador
+    ESCREVA "Computador escolheu: " + escolia_computador
     
-    SE escolha_jogador == escolia_computador ENTÃO
+    SE escolha_jogador == escolha_computador ENTÃO
       ESCREVA "Empate!"
     SENÃO
-      SE (escolha_jogador == 1 E escolia_computador == 3) OU
-         (escolha_jogador == 2 E escolia_computador == 1) OU
-         (escolha_jogador == 3 E escolia_computador == 2) ENTÃO
+      SE (escolha_jogador == Pedra E escolia_computador == Tesoura) OU
+         (escolha_jogador == Papel E escolia_computador == Pedra) OU
+         (escolha_jogador == Tesoura E escolia_computador == Papel) ENTÃO
         ESCREVA "Jogador venceu!"
       SENÃO
         ESCREVA "Computador venceu!"
-      FIM SE
-    FIM SE
-  FIM ENQUANTO
-FIM
+```
