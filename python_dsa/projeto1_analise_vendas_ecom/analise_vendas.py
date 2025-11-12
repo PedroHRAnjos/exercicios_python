@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import random  
 from datetime import datetime, timedelta
-from gerador_de_dados_fictícios import gera_dados
+from gerador_de_dados_ficticios import gera_dados
 
 ''' Exploração inicial dos dados gerados '''
 # Gera os dados chamando a função 
