@@ -7,7 +7,7 @@ tentativa = 1
 
 print("=== JOGO DA ADIVINHAÇÃO ===")
 print("Tente adivinhar o número secreto entre 1 e 20")
-print(f'Você tem {tentativa} tentativas')
+print(f'Você tem 5 tentativas')
 
 for tentativas in range(1,6):
     print(f'Tentativa {tentativa} de 5')
